@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More information</title>
+    <style>
+        
+        #notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50; 
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            display: none; 
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        button {
+            margin: 50px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #008CBA;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #006f98;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Notification</h2>
+
+    <!-- Tugma orqali test qilish -->
+    <button onclick="showNotification('Salom! Bu sizga xabar!')">view a messages</button>
+
+    <!-- Notification konteyneri -->
+    <div id="notification"></div>
+
+    <script>
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.innerText = message;  
+            notification.style.display = 'block'; 
+            
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Dark / Light Mode</title>
+  <style>
+    /* Default Light Mode */
+    body {
+      background-color: #ffffff;
+      color: #111111;
+      font-family: Arial, sans-serif;
+      transition: all 0.3s ease;
+      padding: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #111111;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #111111;
+      color: #ffffff;
+    }
+
+    body.dark-mode button {
+      background-color: #ffffff;
+      color: #111111;
+    }
+  </style>
+</head>
+<body>
+  <button id="toggleMode">🌙 Dark Mode</button>
+
+  <script>
+    const button = document.getElementById('toggleMode');
+    const body = document.body;
+
+    // LocalStorage orqali oxirgi rejimni saqlash
+    if(localStorage.getItem('mode') === 'dark'){
+      body.classList.add('dark-mode');
+      button.textContent = '☀️ Light Mode';
+    }
+
+    button.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      if(body.classList.contains('dark-mode')){
+        button.textContent = '☀️ Light Mode';
+        localStorage.setItem('mode', 'dark');
+      } else {
+        button.textContent = '🌙 Dark Mode';
+        localStorage.setItem('mode', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+
+{% load static %}
+<html>
+<head>
+<title>More information
+</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="static/css/animate.css">
+<link rel="stylesheet" type="text/css" href="static/css/font.css">
+<link rel="stylesheet" type="text/css" href="static/css/li-scroller.css">
+<link rel="stylesheet" type="text/css" href="static/css/slick.css">
+<link rel="stylesheet" type="text/css" href="static/css/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="static/css/theme.css">
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+<!--[if lt IE 9]>
+<script src="static/js/html5shiv.min.js"></script>
+<script src="static/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="header_top_right">
+            <p>Thursday, December 4, 2025</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_bottom">
+          <div class="logo_area"><a href="index.html" class="logo"><img src="static/images/creative logo qilib ber More information.jpg" alt="Rasm bor"></a></div>
+          <div class="add_banner"><a href="#"><img src="static/images/banner logo.jpg" alt=""></a></div> 
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="navArea">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav main_nav">
+          <li class="active"><a href="index.html"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+          <li><a href="#">Fashion</a></li>
+          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Different sweets</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">cake</a></li>
+              <li><a href="#">chocolate fundum</a></li>
+              <li><a href="#">simple chocolate</a></li>
+              <li><a href="#">sweet from USA</a></li>
+              <li><a href="#">sweet from UZB</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Delivery</a></li>
+          <li><a href="#">view</a></li>
+          <li><a href="pages/contact.html">Contact Us</a></li>
+          <li><a href="pages/404.html">404 Error</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  <section id="newsSection">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="latest_newsarea"> <span>News</span>
+          <ul id="ticker01" class="news_sticker">
+            <li><a href="#"><img src="static/images/walking at night.jpg" alt="">Fashion for woman</a></li>
+            <li><a href="#"><img src="static/images/dr.webp" alt="">dress for wedding day</a></li>
+            <li><a href="#"><img src="static/images/Video-game.webp" alt="">Games</a></li>
+            <li><a href="#"><img src="static/images/photo-1.jpeg" alt="">Photography</a></li>
+            <li><a href="#"><img src="static/images/img.webp" alt="">Delivery June order</a></li>
+            <li><a href="#"><img src="static/images/news_thumbnail3.jpg" alt="">Delivery May order</a></li>
+            <li><a href="#"><img src="static/images/news_thumbnail3.jpg" alt="">Delivery April order</a></li>
+            <li><a href="#"><img src="static/images/news_thumbnail3.jpg" alt="">Delivery March order</a></li>
+            <li><a href="#"><img src="static/images/news_thumbnail2.jpg" alt="">Delivery January order</a></li>
+          </ul>
+          <div class="social_area">
+            <ul class="social_nav">
+              <li class="facebook"><a href="#"></a></li>
+              <li class="twitter"><a href="#"></a></li>
+              <li class="Flickr"><a href="#"></a></li>
+              <li class="pinterest"><a href="#"></a></li>
+              <li class="googleplus"><a href="#"></a></li>
+              <li class="vimeo"><a href="#"></a></li>
+              <li class="youtube"><a href="#"></a></li>
+              <li class="mail"><a href="#"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="sliderSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <div class="slick_slider">
+          <div class="single_iteam"> <a href="pages/single_page.html"> <img src="static/images/premium vektor.jpg" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="pages/single_page.html">Chart this year a car New avenue people teacher & students and othhers.</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="pages/single_page.html"> <img src="static/images/add wallpaper.jpg" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="pages/single_page.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui...</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="pages/single_page.html"> <img src="static/images/853669.jpg" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="pages/single_page.html">For woman</a></h2>
+              <p>Dress for wedding day</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="pages/single_page.html"> <img src="static/images/fast-fashion2.jpeg" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="pages/single_page.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui...</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="pages/single_page.html"> <img src="static/images/alone.jpg" alt=""></a>
+          <div class="slider_article">
+            <h2><a class="slider_article" href="pages/single_page.html">Photo</a></h2>
+            <p>Photo background night time city</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="latest_post"> 
+          <h2><span>Delivery news</span></h2>
+          <div class="latest_post_container">
+            <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+            <ul class="latest_postnav">
+              {% for x in brand %}
+              <li>
+                <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{{ x.rasm }}"> </a>
+                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title">  {{ x.title }}</a> </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+            <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contentSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <div class="left_content">
+          <div class="single_post_content">
+            <div class="Business">
+            <div class="single_post_content_left">
+              <ul class="business_catgnav  wow fadeInDown">
+                <li>
+                  <figure class="bsbig_fig"> 
+                    <div class="single_sidebar wow fadeInDown"></div>
+                   <h2><span>Business</span></h2>
+                   
+                  <figure class="bsbig_fig  wow fadeInDown"> <a class="featured_img" href="pages/single_page.html"><img alt="" src="static/images/Course-business-analysis.jpg"> <span class="overlay"></span> </a>
+                    <figcaption> <a href="pages/single_page.html">About Business</a> </figcaption>
+                    <p>A business is an organization or individual engaged in commercial, industrial, or professional activities to provide goods or services, typically with the goal of earning a profit. Businesses can range from sole proprietorships to large corporations and may also operate with social or charitable missions. Key aspects include economic activity, the pursuit of profit, taking on risk, and aiming for long-term continuity. 
+What a business does
+Produces and provides: Businesses create or provide goods (tangible items) and services (intangible actions) to meet customer needs.
+Facilitates economic activity: They are a core part of the economy, turning resources into products and services that people purchase.
+Creates jobs and growth: Businesses generate employment, income, and taxes, contributing to overall economic growth and progress.
+Identifies needs: They find gaps in the market and offer solutions to problems or satisfy wants. </p>
+                  </figure>
+                </li>
+              </ul>
+            </div>
+            <div class="single_post_content_right">
+              <ul class="spost_nav">
+                <li>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/Course-business-analysis.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/uzb-usa.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/B-M.webp"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/4 side.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="fashion_technology_area">
+            <div class="fashion">
+              <div class="single_post_content">
+                <h2><span>Fashion</span></h2>
+                <ul class="business_catgnav wow fadeInDown">
+                  <li>
+                    <figure class="bsbig_fig"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="static/images/gettyimages-841321466-612x612.jpg"> <span class="overlay"></span> </a>
+                      <figcaption> <a href="pages/single_page.html">About Fashion industry</a> </figcaption>
+                      <p>The fashion industry is a global sector for designing, producing, marketing, and selling clothing, footwear, and accessories. It includes segments from high-end haute couture to mass-market ready-to-wear and is driven by trends, consumer demand, and cultural influence. The industry has a complex structure, involving raw material production, design and manufacturing, retail, and support services, and is a significant driver of the global economy and employment. 
+Key aspects of the fashion industry
+Segments: The industry is divided into haute couture (custom-made, high fashion) and ready-to-wear (mass-produced in standard sizes). It also includes luxury goods and various accessories.
+Supply chain: It is a multi-level industry:
+Primary: Production of raw materials like cotton, wool, and silk.
+Secondary: Design and manufacturing of finished goods by designers and brands.</p>
+                    </figure>
+                  </li>
+                </ul>
+                <ul class="spost_nav">
+                  <li>/
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/br.jpg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> fashion for woman beautiful clothes comfort beautiful views and anothers side</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/Fashion-1.jpg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/fast-fashion2.jpeg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/nf.jpg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> fashion for woman beautiful dress comfort and for wedding day</a> </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="technology">
+              <div class="single_post_content">
+                <h2><span>Nvidia</span></h2>
+                <ul class="business_catgnav">
+                  <li>
+                    <figure class="bsbig_fig wow fadeInDown"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="static/images/Nvidia.jpg"> <span class="overlay"></span> </a>
+                      <figcaption> <a href="pages/single_page.html">Nvidia Corporation</a> </figcaption>
+                      <p>Nvidia Corporation[a] (/ɛnˈvɪdiə/ en-VID-ee-ə) is an American technology company headquartered in Santa Clara, California. Founded in 1993 by Jensen Huang, Chris Malachowsky, and Curtis Priem, it develops graphics processing units (GPUs), systems on chips (SoCs), and application programming interfaces (APIs) for data science, high-performance computing, video games, and mobile and automotive applications.[5][6] Nvidia has been described as a Big Tech company. The company's product lines include GeForce GPUs for gaming and creative workloads, and professional GPUs for edge computing, scientific research, and industrial applications. As of the first quarter of 2025, Nvidia held a 92% share of the discrete desktop and laptop GPU market.[7][8]</p>
+                    </figure>
+                  </li>
+                </ul>
+                <ul class="spost_nav">
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/rtx 5090.png"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Nvidia Geforce RTX 5090, 5080, 5070, 5070 Ti, 5060, 5060 Ti</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/gigabyte rtx.jpg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Nvidia Geforce RTX customer model design and prices</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/AI.jpg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Nvidia Geforce RTX colloboration with AI intellegence</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/5070 Ti.jpg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Nvidia Geforce RTX customer model design colloboration with ASUS ROG, Gigabyte, MSI and others:</a> </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="single_post_content">
+            <h2><span>Photography</span></h2>
+            <ul class="photograph_nav  wow fadeInDown">
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/br.jpg" title="Photography Ttile 1"> <img src="static/images/br.jpg" alt=""/></a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/young.jpg" title="Photography Ttile 2"> <img src="static/images/young.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/nature-30.jpg" title="Photography Ttile 3"> <img src="static/images/nature-30.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/nf.jpg" title="Photography Ttile 4"> <img src="static/images/nf.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/photograph_img2.jpg" title="Photography Ttile 5"> <img src="static/images/photograph_img2.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/photograph_img3.jpg" title="Photography Ttile 6"> <img src="static/images/photograph_img3.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/buildings.jpg" title="Photography Ttile 7"> <img src="static/images/buildings.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/photograph_img4.jpg" title="Photography Ttile 8"> <img src="static/images/photograph_img4.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/photograph_img2.jpg" title="Photography Ttile 9"> <img src="static/images/photograph_img2.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/walking at night.jpg" title="Photography Ttile 10"> <img src="static/images/walking at night.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/alone.jpg" title="Photography Ttile 11"> <img src="static/images/alone.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/long.webp" title="Photography Ttile 12"> <img src="static/images/long.webp" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/853669.jpg" title="Photography Ttile 13"> <img src="static/images/853669.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/img.webp" title="Photography Ttile 14"> <img src="static/images/img.webp" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/7676hn.jpg" title="Photography Ttile 15"> <img src="static/images/7676hn.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/for fashion clothes.jpg" title="Photography Ttile 16"> <img src="static/images/for fashion clothes.jpg" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="static/images/ele.webp" title="Photography Ttile 17"> <img src="static/images/ele.webp" alt=""/> </a> </figure>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="single_post_content">
+            <h2><span>Games</span></h2>
+            <div class="single_post_content_left">
+              <ul class="business_catgnav">
+                <li>
+                  <figure class="bsbig_fig  wow fadeInDown"> <a class="featured_img" href="pages/single_page.html"> <img src="static/images/Video-game.webp" alt=""> <span class="overlay"></span> </a>
+                    <figcaption> <a href="pages/single_page.html">Video games about for lap top, mobile phone and Xbox games.</a> </figcaption>
+                    <p>Video games can be about a vast array of subjects, genres, and themes, ranging from action, adventure, and sports to simulations, puzzles, and role-playing games. They are interactive electronic games played on platforms like consoles, PCs, and mobile devices, offering entertainment, competition, and educational value. 
+Examples of popular video game themes and genres:
+Action: Games focused on physical challenges, such as combat and shooting.
+Adventure: Games that emphasize exploration and puzzle-solving.
+Role-Playing Games (RPGs): Games where players assume the roles of characters in a fictional setting, often with a focus on story and character development.
+Sports: Games that simulate various real-world sports.
+Simulation: Games that mimic real-world activities, such as flight simulators or life simulators.
+Strategy: Games that require players to plan and make tactical decisions to achieve their goals.
+Survival: Games focused on resource management and surviving in a hostile environment, often with elements of crafting and building.
+Puzzle: Games that challenge players' problem-solving skills. 
+Platforms for playing video games:
+Consoles: Dedicated gaming machines like the PlayStation, Xbox, and Nintendo Switch.
+</p>
+                  </figure>
+                </li>
+              </ul>
+            </div>
+            <div class="single_post_content_right">
+              <ul class="spost_nav">
+                <li>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/minecraft.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/call of duty mobile.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/post_img1.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/post_img2.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <aside class="right_content">
+          <div class="single_sidebar">
+            <h2><span>Popular Post</span></h2>
+            <ul class="spost_nav">
+              <li>
+                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/853669.jpg"> </a>
+                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                </div>
+              </li>
+              <li>
+                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/post_img2.jpg"> </a>
+                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                </div>
+              </li>
+              <li>
+                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/post_img1.jpg"> </a>
+                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
+                </div>
+              </li>
+              <li>
+                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/post_img2.jpg"> </a>
+                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="single_sidebar">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#category" aria-controls="home" role="tab" data-toggle="tab">Category</a></li>
+              <li role="presentation"><a href="#video" aria-controls="profile" role="tab" data-toggle="tab">Video</a></li>
+              <li role="presentation"><a href="#comments" aria-controls="messages" role="tab" data-toggle="tab">Comments</a></li>
+            </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="category">
+                <ul>
+                  <li class="cat-item"><a href="#">Sports</a></li>
+                  <li class="cat-item"><a href="#">Fashion</a></li>
+                  <li class="cat-item"><a href="#">Business</a></li>
+                  <li class="cat-item"><a href="#">Technology</a></li>
+                  <li class="cat-item"><a href="#">Games</a></li>
+                  <li class="cat-item"><a href="#">Life &amp; Style</a></li>
+                  <li class="cat-item"><a href="#">Photography</a></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="video">
+                <div class="vide_area">
+                  <iframe width="100%" height="250" src="http://www.youtube.com/embed/h5QWbURNEpA?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="comments">
+                <ul class="spost_nav">
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/post_img1.jpg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/post_img2.jpg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/post_img1.jpg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/images/post_img2.jpg"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="single_sidebar wow fadeInDown">
+            <h2><span>Sponsor</span></h2>
+            <a class="sideAdd" href="#"><img src="static/images/pngtree-new-nature-cb-editing-background-picture-image_15595150.png" alt=""></a> </div>
+          <div class="single_sidebar wow fadeInDown">
+            <h2><span>Category Archive</span></h2>
+            <select class="catgArchive">
+              <option>Select Category</option>
+              <option>Life styles</option>
+              <option>Sports</option>
+              <option>Technology</option>
+              <option>Blog</option>
+              <option>Book</option>
+            </select>
+          </div>
+          <div class="single_sidebar wow fadeInDown">
+            <h2><span>Links</span></h2>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Rss Feed</a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Life &amp; Style</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="footer_top">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInLeftBig">
+            <h2>Flickr Images</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInDown">
+            <h2>Tag</h2>
+            <ul class="tag_nav">
+              <li><a href="#">Games</a></li>
+              <li><a href="#">Sports</a></li>
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Life &amp; Style</a></li>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Photo</a></li>
+              <li><a href="#">Slider</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInRightBig">
+            <h2>Contact Us</h2>
+            <p>Bizga murojaat qilishda quyidagi pastda keltirilgan nomer telefonga aloqaga chiqishiz mumkin . Biz sizga yordam berganimizdan chin dildan minnatdormiz</p>
+            <address>
+            St. Usman Nasir 19 Samarkand city 111,UZ Phone: +998 93-515-16-50 Fax: 123-546-567
+            </address>
+            <img src= "{% static 'images/contact!!.jpg' %}" width="350" height="170">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bottom">
+      <p class="copyright">Copyright &copy; 2025 <a href="index.html">NewsFeed</a></p>
+      <p class="developer">Developed By Cipher command</p>
+    </div>
+  </footer>
+</div>
+<script src="static/js/jquery.min.js"></script> 
+<script src="static/js/wow.min.js"></script> 
+<script src="static/js/bootstrap.min.js"></script> 
+<script src="static/js/slick.min.js"></script> 
+<script src="static/js/jquery.li-scroller.1.0.js"></script> 
+<script src="static/js/jquery.newsTicker.min.js"></script> 
+<script src="static/js/jquery.fancybox.pack.js"></script> 
+<script src="static/js/custom.js"></script>
+ 
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+    <a href="{% url 'login' %}">Login</a>
+{% endif %}
+</body>
+</html>
